@@ -47,7 +47,8 @@ public class TurtleSoup {
      * @return the integer number of sides
      */
     public static int calculatePolygonSidesFromAngle(double angle) {
-        throw new RuntimeException("implement me!");
+        int sides = (int) Math.round(360 / (180 - angle));
+        return sides;
     }
 
     /**
