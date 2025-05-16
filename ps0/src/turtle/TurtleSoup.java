@@ -137,7 +137,8 @@ public class TurtleSoup {
      * @param turtle the turtle context
      */
     public static void drawPersonalArt(Turtle turtle) {
-        throw new RuntimeException("implement me!");
+        drawRegularPolygon(turtle, 50, 10);
+        drawRegularPolygon(turtle, 92, 10);
     }
 
     /**
@@ -150,7 +151,8 @@ public class TurtleSoup {
     public static void main(String args[]) {
         DrawableTurtle turtle = new DrawableTurtle();
 
-        drawSquare(turtle, 40);
+        turtle.color(PenColor.YELLOW);
+        drawPersonalArt(turtle);
 
         // draw the window
         turtle.draw();
