@@ -113,7 +113,19 @@ public class TurtleSoup {
      *         otherwise of size (# of points) - 1
      */
     public static List<Double> calculateHeadings(List<Integer> xCoords, List<Integer> yCoords) {
-        throw new RuntimeException("implement me!");
+        List<Double>adjustments = new ArrayList<>();
+        for (int i = 0; i < xCoords.size() - 1; i++)
+        {
+            if (i == 0)
+            {
+                adjustments.add(calculateHeadingToPoint(0, xCoords.get(i), yCoords.get(i), xCoords.get(i + 1), yCoords.get(i + 1)));
+            }
+            else
+            {
+                adjustments.add(calculateHeadingToPoint(adjustments.get(i - 1), xCoords.get(i), yCoords.get(i), xCoords.get(i + 1), yCoords.get(i + 1)));
+            }
+        }
+        return adjustments;
     }
 
     /**
